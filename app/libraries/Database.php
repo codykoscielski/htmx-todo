@@ -21,7 +21,7 @@
 
         function __construct(){
             //Set DSN
-            $dsn = 'mysql:host=' . $this->host . ';port=32780;dbname=' . $this->dbname;
+            $dsn = 'mysql:host=' . $this->host . ';port=3306;dbname=' . $this->dbname;
             $options = array(
                 PDO::ATTR_PERSISTENT => true,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

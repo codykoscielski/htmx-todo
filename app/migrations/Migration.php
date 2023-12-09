@@ -13,13 +13,13 @@
             if(!$this->checkIfTableExists('users')) {
                 $this->createUsersTables();
             } else {
-                echo 'Users table exists';
+                echo "Users table exists\n";
             }
 
             if(!$this->checkIfTableExists('todos')) {
                 $this->createToDoTables();
             } else {
-                echo 'Todos table exists';
+                echo "Todos table exists\n";
             }
         }
 
@@ -41,7 +41,7 @@
 
                 $this->db->query($sql);
                 $this->db->execute();
-                echo 'User tables created';
+                echo "User tables created\n";
             } catch (PDOException $e) {
                 // error message
                 echo "Error when creating user table: " . $e->getMessage() . "\n";
@@ -61,9 +61,9 @@
 
                 $this->db->query($sql);
                 $this->db->execute();
-                echo 'Todos tables created';
+                echo "Todos tables created\n";
             } catch (PDOException $e) {
-                echo "Error when creating todo tbale: " . $e->getMessage() . "\n";
+                echo "Error when creating todo table: " . $e->getMessage() . "\n";
             }
         }
     }
@@ -73,7 +73,10 @@
         $db = new Database();
         $migration = new Migration($db);
         $migration->run();
+        echo "Migration Completed!";
+        echo "\n";
     } else {
-        echo 'This must be ran from the CLI';
+        echo "This must be ran from the CLI";
+        echo "\n";
     }
 
