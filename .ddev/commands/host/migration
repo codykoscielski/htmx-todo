@@ -1,3 +1,8 @@
 #!/bin/bash
 set -eu -o pipefail
+
+# Create the database if it does not exist
+ddev exec 'mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS htmx;"'
+
+# This script creates the database tables
 ddev exec php /var/www/html/app/migrations/Migration.php
