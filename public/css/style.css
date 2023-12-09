@@ -1,0 +1,11 @@
+/* HTMX APP by @cody_koscielski */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d1e26;
+}

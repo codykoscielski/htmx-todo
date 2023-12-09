@@ -1,0 +1,3 @@
+#!/bin/bash
+set -eu -o pipefail
+ddev exec php /var/www/html/app/migrations/Migration.php
