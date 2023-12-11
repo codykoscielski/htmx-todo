@@ -1,5 +1,5 @@
 # HTMX Todo Things
-### A simple ToDo app in PHP and HTMX
+### ToDo Things is a Dracula Theme inspired ToDo application built in PHP and HTMX running in DDEV
 
 ## Installation
 
