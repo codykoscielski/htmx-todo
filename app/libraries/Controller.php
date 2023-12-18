@@ -25,5 +25,16 @@
                 die('View does not exist');
             }
         }
+
+        //load partials
+        public function partial($partial, $data = []): void{
+            // Check for partial file
+            if(file_exists('../app/views/partials/' . $partial . '.php')){
+                require_once '../app/views/partials/' . $partial . '.php';
+            } else {
+                // Partial does not exist
+                die('Partial does not exist');
+            }
+        }
     }
 
