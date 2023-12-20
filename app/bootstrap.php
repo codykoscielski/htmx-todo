@@ -2,7 +2,16 @@
     //load config
     require_once 'config/config.php';
 
-    //Autoload Core Libraries
+    // Automatically include all files from the libraries directory
+    $libraries = glob('../app/libraries/*.php');
+        foreach ($libraries as $file) {
+        require_once $file;
+    }
+
+    // Autoload for controllers
     spl_autoload_register(function($className) {
-        require_once 'libraries/' . $className . '.php';
+        $controllerFile = '../app/controllers/' . $className . '.php';
+        if (file_exists($controllerFile)) {
+            require_once $controllerFile;
+        }
     });

@@ -2,9 +2,12 @@
     //Error checking
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL & ~E_WARNING);
+    error_reporting(E_ALL);
 
 require_once '../app/bootstrap.php';
 
-    //init core library
-    $init = new Core;
+    $router = new Router();
+
+    require_once '../app/web/web.php';
+
+    $router->dispatch();
