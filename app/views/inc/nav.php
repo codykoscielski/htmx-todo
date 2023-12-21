@@ -1,4 +1,6 @@
-<nav class="drac-bg-purple">
-    <h3 class="drac-text drac-text-lg drac-text-white">HTMX ToDo Things</h3>
-    <button class="drac-btn drac-bg-cyan">Login</button>
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-4" data-bs-theme="dark">
+    <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <a href="" class="btn btn-primary">Log in</a>
+    </div>
 </nav>

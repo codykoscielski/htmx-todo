@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "dracula-ui": "^1.0.6",
     "htmx.org": "^1.9.9"
   }
 }
