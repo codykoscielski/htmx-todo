@@ -8,12 +8,7 @@
             <div class="drac-box drac-bg-pink-purple drac-w-xl drac-rounded-lg">
                 <h3 class="drac-heading drac-heading-lg drac-text-white">Welcome, ToDo Things</h3>
                 <div class="btn-container">
-                    <a href="/users/signup">
-                        <button class="drac-btn">
-                            Sign up
-                        </button>
-                    </a>
-                    <a href="/users/login">
+                    <a href="/auth">
                         <button class="drac-btn drac-bg-cyan">
                             Log in
                         </button>

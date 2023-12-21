@@ -1,6 +1,8 @@
 <?php
     //load config
     require_once 'config/config.php';
+    // Load helper functions
+    require_once 'helpers/functions.php';
 
     // Automatically include all files from the libraries directory
     $libraries = glob('../app/libraries/*.php');

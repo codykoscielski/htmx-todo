@@ -9,10 +9,24 @@
         }
 
         public function signup(): void {
-           echo $this->partial('signup');
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                // check to see if the request is coming from HTMX
+                if (isset($_SERVER['HTTP_HX_REQUEST']) && $_SERVER['HTTP_HX_REQUEST'] === 'true') {
+                    echo $this->partial('signup');
+                } else {
+                    redirect('/auth');
+                }
+            }
         }
 
         public function login(): void {
-            echo $this->partial('login');
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                // Check to see if the request is coming from HTMX
+                if (isset($_SERVER['HTTP_HX_REQUEST']) && $_SERVER['HTTP_HX_REQUEST'] === 'true') {
+                    echo $this->partial('login');
+                } else {
+                    redirect('/auth');
+                }
+            }
         }
     }
