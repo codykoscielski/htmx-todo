@@ -10,3 +10,10 @@ body {
     background-color: #c9c9c9;
     font-family: 'Roboto', sans-serif;
 }
+
+.center-content {
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
