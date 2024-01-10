@@ -6,3 +6,6 @@
     $router->get('/auth/login', 'Auth::login');
     $router->get('/auth/signup', 'Auth::signup');
     $router->post('/auth/signup', 'Auth::signup');
+
+    // Dashboard Routes
+    $router->get('/dashboard', 'Dashboard::index');

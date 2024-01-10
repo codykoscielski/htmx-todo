@@ -3,7 +3,7 @@
  require APPROOT . '/views/inc/nav.php';
 ?>
     <main class="center-content">
-        <div class="container">
+        <div class="container content">
             <?php echo $content ?>
         </div>
     </main>

@@ -28,7 +28,11 @@
 
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 $addUser = $this->adminModel->registerNewUser($data);
-                dd($addUser);
+                if($addUser) {
+                    echo 'user added';
+                } else {
+                    echo 'there was an issue';
+                }
             } else {
                 if(isset($_SERVER['HTTP_HX_REQUEST']) && $_SERVER['HTTP_HX_REQUEST'] === 'true') {
                     echo $this->partial('signup');

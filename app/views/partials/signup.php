@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2 class="text-center">Login</h2>
+            <h2 class="text-center">Sign up</h2>
             <form method="POST" action="/auth/signup">
                 <div class="form-group py-4">
                     <label for="name">Name</label>
@@ -21,6 +21,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <p>Already have an account? <a href="/auth/login" hx-get="/auth/login" hx-swap="innerHTML" hx-target=".content">Login here</a></p>
         </div>
     </div>
 </div>

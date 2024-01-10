@@ -13,7 +13,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <p>Don't have an account? <a href="/auth/signup">Create one here</a></p>
+            <p>Don't have an account? <a href="/auth/signup" hx-get="/auth/signup" hx-target=".content" hx-swap="innerHTML">Create one here</a></p>
         </div>
     </div>
 </div>
