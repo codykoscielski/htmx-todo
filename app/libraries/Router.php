@@ -12,6 +12,9 @@
        public function get(string $route, string $action, array $middleware = []): void {
            $this->register('GET', $route, $action, $middleware);
        }
+       public function post(string $route, string $action, array $middleware = []): void {
+           $this->register('POST', $route, $action, $middleware);
+       }
 
        public function dispatch(): void {
            $requestedMethod = $_SERVER['REQUEST_METHOD'];
