@@ -14,7 +14,6 @@
 
         public function signup(): void {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // check to see if the request is coming from HTMX
                 $_POST = filter_input_array(htmlspecialchars(INPUT_POST));
 
                 $data = [

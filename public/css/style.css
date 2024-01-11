@@ -17,3 +17,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+ .todo-form {
+     padding: 25px;
+     background-color: #fff;
+     border-radius: 15px;
+ }
+
+ .card {
+     border-radius: 15px;
+ }
