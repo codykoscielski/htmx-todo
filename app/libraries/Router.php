@@ -15,6 +15,9 @@
        public function post(string $route, string $action, array $middleware = []): void {
            $this->register('POST', $route, $action, $middleware);
        }
+       public function delete(string $route, string $action, array $middleware = []): void {
+           $this->register('DELETE', $route, $action, $middleware);
+       }
 
        public function dispatch(): void {
            $requestedMethod = $_SERVER['REQUEST_METHOD'];

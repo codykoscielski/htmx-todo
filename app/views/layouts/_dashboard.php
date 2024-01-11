@@ -6,17 +6,17 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 mx-auto">
-                <form action="dashboard/add" class="todo-form">
+                <form hx-post="dashboard/addtodo" hx-target=".todo-listings" class="todo-form">
                     <div class="mb-3">
                         <label for="todo" class="form-label">New ToDo</label>
-                        <input type="text" class="form-control" id="todo" name="todo" placeholder="name@example.com">
+                        <input type="text" class="form-control" id="todo" name="todo" placeholder="Do something here...">
                     </div>
                     <button class="btn btn-primary" type="submit">+ Add</button>
                 </form>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 mx-auto">
+            <div class="col-12 col-md-6 mx-auto todo-listings">
                   <?= $todoContent; ?>
             </div>
         </div>

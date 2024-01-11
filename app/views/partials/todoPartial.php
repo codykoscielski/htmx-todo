@@ -5,7 +5,7 @@
                 <h5 class="card-title"><?= $todo->todo ?></h5>
                 <div class="d-flex justify-content-between">
                     <button class="btn btn-primary">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button hx-delete="/dashboard/deleteTodo/<?= $todo->id ?>" class="btn btn-danger">Delete</button>
                     <button class="btn btn-success">Completed</button>
                 </div>
             </div>

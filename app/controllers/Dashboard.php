@@ -23,8 +23,23 @@
 
                 $data = [
                     'todo' => trim($_POST['todo']),
-                    'id' => 1
+                    'user_id' => 1
                 ];
+
+                $addNewTodo = $this->todoModel->addNewTodo($data);
+                if($addNewTodo) {
+                    $allTodos = $this->todoModel->getAllTodos();
+                    $data = [
+                        'todo' => $allTodos
+                    ];
+                   echo $this->partial('/todoPartial', $data);
+                }
+            }
+        }
+
+        public function deleteTodo($id): void {
+            if($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+                dd($id);
             }
         }
     }

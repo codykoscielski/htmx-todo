@@ -9,3 +9,5 @@
 
     // Dashboard Routes
     $router->get('/dashboard', 'Dashboard::index');
+    $router->post('/dashboard/addtodo', 'Dashboard::addtodo');
+    $router->delete('/dashboard/deleteTodo/{id}', 'Dashboard::deletetodo');
