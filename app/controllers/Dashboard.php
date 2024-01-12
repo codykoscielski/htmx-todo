@@ -39,7 +39,14 @@
 
         public function deleteTodo($id): void {
             if($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-                dd($id);
+                $deleteTodo = $this->todoModel->deleteTodo($id);
+                if($deleteTodo) {
+                    $allTodos = $this->todoModel->getALlTodos();
+                    $data = [
+                        'todo' => $allTodos
+                    ];
+                    echo $this->partial('/todoPartial', $data);
+                }
             }
         }
     }

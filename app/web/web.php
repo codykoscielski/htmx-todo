@@ -1,6 +1,6 @@
 <?php
 
-    /** @var Router $router */
+    /** @var Routerold $router */
     $router->get('/', 'Pages::index');
     $router->get('/auth', 'Auth::index');
     $router->get('/auth/login', 'Auth::login');

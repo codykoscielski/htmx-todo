@@ -11,6 +11,24 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+}
+
+.welcome, .login {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px 10px;
+}
+
 .center-content {
     height: calc(100vh - 56px);
     display: flex;
