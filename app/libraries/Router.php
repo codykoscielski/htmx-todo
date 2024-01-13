@@ -28,6 +28,9 @@ class Router {
         $this->register('DELETE', $route, $action, $middleware);
     }
 
+    public function put(string $route, string $action, array $middleware = []): void {
+        $this->register('PUT', $route, $action, $middleware);
+    }
     // Dispatches the request to the appropriate route action
     public function dispatch(): void {
         // Get the requested method and URI from the server variables

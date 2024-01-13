@@ -44,3 +44,12 @@ body {
  .card {
      border-radius: 15px;
  }
+
+ footer {
+     position: absolute;
+     bottom: 0;
+     height: 77.75px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }

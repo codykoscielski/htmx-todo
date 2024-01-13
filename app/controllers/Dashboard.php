@@ -16,6 +16,14 @@
             ]);
         }
 
+        public function getTodo(int $id): void {
+            $todo = $this->todoModel->getTodoById($id);
+            $data = [
+                'todo' => $todo
+            ];
+            echo $this->partial('/singleTodoPartial', $data);
+        }
+
         public function addToDo(): void {
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -34,6 +42,30 @@
                     ];
                    echo $this->partial('/todoPartial', $data);
                 }
+            }
+        }
+
+        public function editTodo(int $id): void {
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $_POST = filter_input_array(htmlspecialchars(INPUT_POST));
+                $data = [
+                    'id' => $id,
+                    'todo' => trim($_POST['todo'])
+                ];
+                $editTodo = $this->todoModel->editTodo($data);
+                if($editTodo) {
+                    $todo = $this->todoModel->getTodoById($id);
+                    $data = [
+                        'todo' => $todo
+                    ];
+                    echo $this->partial('/singleTodoPartial', $data);
+                }
+            } else {
+                $todo = $this->todoModel->getTodoById($id);
+                $data = [
+                    'todo' => $todo
+                ];
+                echo $this->partial('/editTodoPartial', $data);
             }
         }
 
