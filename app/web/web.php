@@ -14,3 +14,4 @@
     $router->get('/dashboard/get/{id}', 'Dashboard::gettodo');
     $router->get('/dashboard/edittodo/{id}', 'Dashboard::edittodo');
     $router->post('/dashboard/edittodo/{id}', 'Dashboard::edittodo');
+    $router->post('/dashboard/completetodo/{id}', 'Dashboard::completetodo');

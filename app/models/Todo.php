@@ -9,7 +9,7 @@
         }
 
         public function getAllTodos(): array | null{
-            $this->db->query('SELECT * FROM todos');
+            $this->db->query('SELECT * FROM todos ORDER BY completed ASC');
             return $this->db->resultSet();
         }
 
@@ -47,6 +47,17 @@
             $this->db->query('UPDATE todos SET todo = :todo WHERE id = :id');
             $this->db->bind(':todo', $data['todo']);
             $this->db->bind(':id', $data['id']);
+
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function completeTodo($id): bool {
+            $this->db->query('UPDATE todos SET completed = 1 WHERE id = :id');
+            $this->db->bind(':id', $id);
 
             if($this->db->execute()) {
                 return true;

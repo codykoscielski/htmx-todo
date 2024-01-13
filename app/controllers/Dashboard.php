@@ -69,6 +69,20 @@
             }
         }
 
+        public function completeTodo(int $id): void {
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+               $completedTodo = $this->todoModel->completeTodo($id);
+               if($completedTodo) {
+                   //render all the todos again
+                   $allTodos = $this->todoModel->getAllTodos();
+                   $data = [
+                       'todo' => $allTodos
+                   ];
+                   echo $this->partial('/todoPartial', $data);
+               }
+            }
+        }
+
         public function deleteTodo($id): void {
             if($_SERVER['REQUEST_METHOD'] === 'DELETE') {
                 $deleteTodo = $this->todoModel->deleteTodo($id);

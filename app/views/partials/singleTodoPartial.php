@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-between">
             <button hx-get="/dashboard/edittodo/<?= $todo->id ?>" class="btn btn-primary">Edit</button>
             <button hx-delete="/dashboard/deleteTodo/<?= $todo->id ?>" hx-target=".todo-listings" hx-swap="innerHTML" class="btn btn-danger">Delete</button>
-            <button class="btn btn-success">Completed</button>
+            <button hx-post="/dashboard/completetodo/<?= $todo->id ?>" hx-target=".todo-listings" hx-swap="innerHTML" class="btn btn-success">Completed</button>
         </div>
     </div>
 </div>
