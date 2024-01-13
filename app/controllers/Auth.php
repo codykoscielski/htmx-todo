@@ -51,7 +51,7 @@
 
                 $loggedinUser = $this->adminModel->login($data);
                 if($loggedinUser) {
-                    dd($loggedinUser);
+                    $this->createUserSession($loggedinUser);
                 }
             }
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -64,7 +64,20 @@
             }
         }
 
-        private function createUserSessoin(): void {
+        public function logout(): void {
+            unset($_SESSION['user_id']);
+            unset($_SESSION['user_email']);
+            unset($_SESSION['user_name']);
+            session_destroy();
+            redirect('/auth');
+        }
+
+        private function createUserSession(object $user): void {
             session_regenerate_id(true);
+
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_email'] = $user->email;
+            $_SESSION['user_name'] = $user->name;
+            redirect('/dashboard');
         }
     }

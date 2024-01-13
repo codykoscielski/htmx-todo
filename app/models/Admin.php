@@ -24,11 +24,17 @@
             }
         }
 
-        public function login(array $data): array | bool {
-            dd($data);
+        public function login(array $data): object | bool {
             $this->db->query('SELECT * FROM users WHERE email = :email');
             $this->db->bind(':email', $data['email']);
 
+            $row = $this->db->single();
+            $hashed_password = $row->password;
+            if(password_verify($data['password'], $hashed_password)) {
+                return $row;
+            } else {
+                return false;
+            }
 
         }
     }

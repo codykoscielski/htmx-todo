@@ -3,6 +3,9 @@
     class Dashboard extends Controller {
 
         public function __construct() {
+            if(!isLoggedIn()) {
+                redirect('/auth');
+            }
             $this->todoModel = $this->model('Todo');
         }
         public function index(): void {
