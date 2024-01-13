@@ -8,8 +8,9 @@
             $this->db = new Database;
         }
 
-        public function getAllTodos(): array | null{
-            $this->db->query('SELECT * FROM todos ORDER BY completed ASC');
+        public function getAllTodos(int $id): array | null{
+            $this->db->query('SELECT * FROM todos WHERE user_id = :id ORDER BY completed ASC');
+            $this->db->bind(':id', $id);
             return $this->db->resultSet();
         }
 

@@ -28,7 +28,7 @@
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 $addUser = $this->adminModel->registerNewUser($data);
                 if($addUser) {
-                    echo 'user added';
+                    redirect('/auth');
                 } else {
                     echo 'there was an issue';
                 }
