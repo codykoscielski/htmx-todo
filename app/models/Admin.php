@@ -8,7 +8,7 @@
             $this->db = new Database;
         }
 
-        public function registerNewUser($data): bool {
+        public function registerNewUser(array $data): bool {
             $this->db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
 
             // Bind values
@@ -22,5 +22,13 @@
             } else {
                 return false;
             }
+        }
+
+        public function login(array $data): array | bool {
+            dd($data);
+            $this->db->query('SELECT * FROM users WHERE email = :email');
+            $this->db->bind(':email', $data['email']);
+
+
         }
     }

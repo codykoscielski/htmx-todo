@@ -42,6 +42,18 @@
         }
 
         public function login(): void {
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $_POST = filter_input_array(htmlspecialchars(INPUT_POST));
+                $data = [
+                    'email' => trim($_POST['email']),
+                    'password' => trim($_POST['password'])
+                ];
+
+                $loggedinUser = $this->adminModel->login($data);
+                if($loggedinUser) {
+                    dd($loggedinUser);
+                }
+            }
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 // Check to see if the request is coming from HTMX
                 if (isset($_SERVER['HTTP_HX_REQUEST']) && $_SERVER['HTTP_HX_REQUEST'] === 'true') {
@@ -50,5 +62,9 @@
                     redirect('/auth');
                 }
             }
+        }
+
+        private function createUserSessoin(): void {
+            session_regenerate_id(true);
         }
     }
