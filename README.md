@@ -1,5 +1,5 @@
 # HTMX Todo Things
-### HTMX Todo Things is a simple, yet complex, hypermedia based application built on HTMX, PHP, and MySQL. This application will allow you to, you know, keep track of things that you have to do. 
+### HTMX Todo Things is a simple hypermedia based application built on HTMX, PHP, and MySQL. This application will allow you to, you know, keep track of things that you have to do. 
 
 ## Installation
 
