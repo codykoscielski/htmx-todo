@@ -7,6 +7,8 @@
 - Run `ddev start`
 - Then run `ddev migration`
 - Create an account
+- Sign in after creating your account
+- Get to doing some things
 
 ## Custom Commands
 
